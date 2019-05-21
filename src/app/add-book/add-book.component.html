@@ -1,3 +1,8 @@
+
+<li *ngFor="let genre of (genres$ | async)">
+  {{ genre.name }}
+</li>
+
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
 
   <label>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of, Observable } from 'rxjs';
+import { of, Observable, BehaviorSubject } from 'rxjs';
 import { Book } from '../state/app.state';
 
 @Injectable({
@@ -7,15 +7,23 @@ import { Book } from '../state/app.state';
 })
 export class BooksService {
 
+  subj: BehaviorSubject<Book[]>;
+
   books: Book[] = [
-    { title: 'The Hobbit'} as Book
+    { title: 'The Hobbit'} as Book,
+    { title: 'Lord of the Rings'} as Book,
+    { title: 'Game of Thrones'} as Book
   ];
 
-  // AddBook() {
-
-  // }
+  constructor() {
+    this.subj = new BehaviorSubject<Book[]>(this.books);
+  }
+  addBook(book: Book) {
+    this.books.push(book);
+    this.subj.next(this.books);
+  }
 
   public getBooks(): Observable<Book[]> {
-    return of(this.books);
+    return this.subj;
   }
 }

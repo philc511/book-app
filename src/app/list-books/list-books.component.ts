@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { BooksService } from '../books/books.service';
-import { Book } from '../state/app.state';
+import { Book, Genre } from '../state/app.state';
+import { GenresService } from '../genres.service';
 
 @Component({
   selector: 'app-list-books',
@@ -10,11 +11,15 @@ import { Book } from '../state/app.state';
 })
 export class ListBooksComponent implements OnInit {
   books$: Observable<Book[]>;
+  genres$: Observable<Genre[]>;
 
-  constructor(private booksService: BooksService) { }
+
+  constructor(private booksService: BooksService,
+    private genresService: GenresService) { }
 
   ngOnInit() {
     this.books$ = this.booksService.getBooks();
+    this.genres$ = this.genresService.getGenres();
   }
 
 }

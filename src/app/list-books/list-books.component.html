@@ -1,8 +1,13 @@
 <p>
 </p>
-<li *ngFor="let book of (books$ | async)>
+<li *ngFor="let book of (books$ | async)">
   {{ book.title }}
 </li>
+
+<li *ngFor="let genre of (genres$ | async)">
+  {{ genre.name }}
+</li>
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
