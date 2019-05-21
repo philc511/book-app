@@ -25,7 +25,6 @@ export class AddBookComponent implements OnInit {
 
   ngOnInit() {
     this.genres$ = this.genresService.getGenres();
-
   }
 
   onSubmit() {
