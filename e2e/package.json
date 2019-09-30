@@ -1,0 +1,34 @@
+{
+    "name": "claims-lodgement-e2e",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "e2e-release": "protractor ./node_modules/@royallondon/angular-e2e-configuration/config/cucumber-release.conf.js",
+        "install": "npm install --ignore-scripts",
+        "postinstall": "webdriver-configure && vendor-copy"
+    },
+    "vendorCopy": [
+        {
+            "from": "node_modules/@royallondon/webdriver-manager/selenium",
+            "to": "node_modules/protractor/node_modules/webdriver-manager/selenium"
+        }
+    ],
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "@royallondon/angular-e2e-configuration": "1.0.0",
+        "@royallondon/webdriver-manager": "^2.1.0",
+        "chai": "4.1.2",
+        "chai-as-promised": "7.1.1",
+        "cucumber": "4.2.1",
+        "cucumber-html-reporter": "4.0.3",
+        "cucumber-tsflow": "2.2.0",
+        "cucumberjs-junitxml": "1.0.0",
+        "protractor": "5.4.0",
+        "protractor-cucumber-framework": "6.0.0",
+        "request": "^2.81.0",
+        "ts-node": "7.0.0",
+        "typescript": "2.9.2",
+        "vendor-copy": "2.0.0"
+    }
+}

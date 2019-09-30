@@ -7,9 +7,7 @@
     "types": [
       "jasmine",
       "jasminewd2",
-      "node",
-      "chai",
-      "chai-as-promised"
+      "node"
     ]
   }
 }
