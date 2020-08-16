@@ -13,31 +13,38 @@ export class QuestionService {
 
     const questions: QuestionBase<string>[] = [
 
-      new DropdownQuestion({
-        key: 'brave',
-        label: 'Bravery Rating',
-        options: [
-          {key: 'solid',  value: 'Solid'},
-          {key: 'great',  value: 'Great'},
-          {key: 'good',   value: 'Good'},
-          {key: 'unproven', value: 'Unproven'}
-        ],
-        order: 3
-      }),
+      // new DropdownQuestion({
+      //   key: 'brave',
+      //   label: 'Bravery Rating',
+      //   options: [
+      //     {key: 'solid',  value: 'Solid'},
+      //     {key: 'great',  value: 'Great'},
+      //     {key: 'good',   value: 'Good'},
+      //     {key: 'unproven', value: 'Unproven'}
+      //   ],
+      //   order: 3
+      // }),
 
       new TextboxQuestion({
-        key: 'firstName',
-        label: 'First name',
-        value: 'Bombasto',
+        key: 'title',
+        label: 'Title',
+        value: '',
         required: true,
         order: 1
       }),
 
       new TextboxQuestion({
-        key: 'emailAddress',
-        label: 'Email',
-        type: 'email',
+        key: 'author',
+        label: 'Author',
+        required: true,
         order: 2
+      }),
+
+      new TextboxQuestion({
+        key: 'dateCompleted',
+        label: 'Date completed',
+        required: true,
+        order: 3
       })
     ];
 
